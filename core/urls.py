@@ -33,5 +33,6 @@ urlpatterns = [
     # app urls
     path("api/attendance/", include("attendance.urls")),
     path("api/employees/", include("employees.urls")),
+    path("api/", include("accounts.urls")),
 
 ]
