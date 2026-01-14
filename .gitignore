@@ -1,5 +1,25 @@
-venv/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+
+# Environment variables
 .env
+
+# Database (SQLite only)
 db.sqlite3
+
+# Media uploads
+media/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ignore migration files but keep folder
+**/migrations/*.py
+!**/migrations/__init__.py
