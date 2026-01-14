@@ -4,21 +4,11 @@ from django.db import transaction
 from employees.models import Employee
 
 
-class UserCreateSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
-
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["id", "email", "full_name", "role", "password"]
-
-    def create(self, validated_data):
-        password = validated_data.pop("password")
-        user = User.objects.create_user(
-            password=password,
-            **validated_data
-        )
-        return user
-    
+        fields = ["id", "email", "full_name", "role"]
+        read_only_fields = ["id"]
 
 
 class OnboardingSerializer(serializers.Serializer):
